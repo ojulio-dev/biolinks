@@ -1,32 +1,34 @@
-<div>
-    <h1>Criar um Link</h1>
+<x-layout.app>
+    <div>
+        <h1>Criar um Link</h1>
 
-    @if ($message = session()->get('message'))
-        <div>{{ $message }}</div>
-        <br>
-    @endif
+        @if ($message = session()->get('message'))
+            <div>{{ $message }}</div>
+            <br>
+        @endif
 
-    <form action="{{ route('links.create') }}" method="post">
-        @csrf
+        <form action="{{ route('links.create') }}" method="post">
+            @csrf
 
-        <div>
-            <input name="link" placeholder="Link" value="{{ old('link') }}" />
-            @error('link')
-                <span>{{ $message }}</span>
-            @enderror
-        </div>
+            <div>
+                <input name="link" placeholder="Link" value="{{ old('link') }}" />
+                @error('link')
+                    <span>{{ $message }}</span>
+                @enderror
+            </div>
 
-        <br>
+            <br>
 
-        <div>
-            <input name="name" placeholder="Name" value="{{ old('name') }}" />
-            @error('name')
-                <span>{{ $message }}</span>
-            @enderror
-        </div>
+            <div>
+                <input name="name" placeholder="Name" value="{{ old('name') }}" />
+                @error('name')
+                    <span>{{ $message }}</span>
+                @enderror
+            </div>
 
-        <br>
+            <br>
 
-        <button>Salvar</button>
-    </form>
-</div>
+            <button>Salvar</button>
+        </form>
+    </div>
+</x-layout.app>
