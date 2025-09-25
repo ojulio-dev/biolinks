@@ -2,7 +2,7 @@
     'href' => null,
     'block' => null,
     'outline' => null,
-    'color' => 'primary'
+    'color' => 'primary',
 ])
 
 @php
@@ -10,10 +10,5 @@
 @endphp
 
 <{{ $tag }} {{ $href ? "href=$href" : '' }}
-    {{ $attributes->class([
-        'btn',
-        "btn-{$color}",
-        'btn-block' => $block,
-        'btn-outline' => $outline,
-    ]) }}>
+    {{ $attributes->class(['btn', "btn-{$color}", 'btn-wide' => $block, 'btn-outline' => $outline]) }}>
     {{ $slot }}</{{ $tag }}>
